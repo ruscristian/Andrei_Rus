@@ -14,6 +14,6 @@ public class Factorial {
             number = j * i;
             j = number;
         }
-        System.out.println("Factorial number is: " + number);
+        System.out.println("Factorial of number is: " + number);
     }
 }
