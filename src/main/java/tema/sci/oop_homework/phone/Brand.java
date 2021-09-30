@@ -17,7 +17,7 @@ public class Brand{
         this.name = name;
     }
 
-    public Model addModel(String model, String blue, String glass, int Baterry){
+    public Model addModel(String model, String color, String material, int Baterry){
 
         Model insertModel = new Model();
         this.models.add(insertModel);

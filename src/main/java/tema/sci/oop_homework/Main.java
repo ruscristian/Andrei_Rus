@@ -18,12 +18,46 @@ public class Main {
         samsung.addModel("samsungGalaxy", "brown", "Glass", 12);
         samsung.addModel("samsungGalaxy", "pink", "Wood", 25);
 
-        Phone andreiPhone = new Phone(samsung,"samsungGalaxy", Generators.getGeneratedLong());
-        PhoneOwner andrei = new PhoneOwner(Generators.getGeneratedLong(), andreiPhone);
+        Phone andreiPhone = new Phone(samsung,"samsungGalaxy");
+        PhoneOwner andrei = new PhoneOwner(andreiPhone);
 
         System.out.println(andreiPhone);
         System.out.println(andrei);
         System.out.println(Brand.getModels());
+
+//        *** Homework API ***
+//
+//        Phone phone= new Samsung(); // shouldn't compile
+//
+//        Phone phone = new SamsungGalaxy6();
+//
+//
+//
+//        phone.addContact("1", "phone number", "fist name", "last name");
+//
+//        phone.addContact("2", "phone number", "fist name", "last name");
+//
+//        phone.listContacts();
+//
+//
+//
+//        // send a message to the first contact from the previous listed
+//
+//        // max number of characters - 100
+//
+//        phone.sendMessage("phone number", "message content");
+//
+//        phone.listMessages("phone number");
+//
+//
+//
+//        // send a message to the second contact from the previous listed
+//
+//        phone.call("phone number");
+//
+//        phone.viewHistory();
+
+
 
     }
 }

@@ -1,24 +1,30 @@
 package tema.sci.oop_homework.phone;
 
 
-import tema.sci.oop_homework.phone_owner.PhoneOwner;
 
-import java.util.ArrayList;
-import java.util.List;
+import tema.sci.oop_homework.util.Generators;
 
-public class Phone{
+import java.util.HashMap;
+
+public class Phone implements Messages{
 
     private String model;
     private long imei;
     private Brand brand;
-    private List<Contacts> contactsList = new ArrayList<>();
+    private HashMap<Long, String> contactsList = new HashMap<>();
 
+    public Phone() {
+    }
 
-    public Phone(Brand brand, String model, long imei) {
+    public Phone(Brand brand, String model) {
 
         this.brand = brand;
         this.model = model;
-        this.imei = imei;
+        this.imei = Generators.getGeneratedLong();
+    }
+
+    public HashMap<Long, String> getContactsList() {
+        return contactsList;
     }
 
     @Override
@@ -31,7 +37,6 @@ public class Phone{
                 '}';
     }
 
-    public Phone() {
-    }
+
 }
 
