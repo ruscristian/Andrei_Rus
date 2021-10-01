@@ -2,41 +2,40 @@ package tema.sci.oop_homework.phone;
 
 
 
-import tema.sci.oop_homework.util.Generators;
-
 import java.util.HashMap;
 
-public class Phone implements Messages{
+public class Phone{
 
-    private String model;
-    private long imei;
+    private Model model;
+    private String imei;
     private Brand brand;
-    private HashMap<Long, String> contactsList = new HashMap<>();
+    private String phoneNumber;
+    private HashMap<String, Phone> contactsList = new HashMap<>();
 
-    public Phone() {
-    }
 
-    public Phone(Brand brand, String model) {
-
+    public Phone(String phoneNumber, Brand brand, Model model, String imei) {
+        this.phoneNumber = phoneNumber;
         this.brand = brand;
         this.model = model;
-        this.imei = Generators.getGeneratedLong();
+        this.imei = imei;
     }
 
-    public HashMap<Long, String> getContactsList() {
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+    public HashMap<String, Phone> getContactsList() {
         return contactsList;
     }
 
     @Override
     public String toString() {
         return "Phone{" +
-                "model='" + model + '\'' +
-                ", imei=" + imei +
+                "phoneNumber='" + phoneNumber + '\'' +
+                " model='" + model + '\'' +
+                ", imei='" + imei + '\'' +
                 ", brand=" + brand +
                 ", contactsList=" + contactsList +
                 '}';
     }
-
-
 }
 

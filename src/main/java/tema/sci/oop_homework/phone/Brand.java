@@ -5,30 +5,33 @@ import java.util.List;
 
 public class Brand{
 
-    private String name;
 
-    public static List<Model> getModels() {
-        return models;
-    }
+    private static String name;
+    private Model model;
 
-    private static List<Model> models = new ArrayList<>();
 
     public Brand(String name) {
         this.name = name;
     }
 
-    public Model addModel(String model, String color, String material, int Baterry){
 
-        Model insertModel = new Model();
-        this.models.add(insertModel);
-        return insertModel;
+    private static List<Model> models = new ArrayList<Model>();
+
+    public void addModel(Model model){
+        this.model = new Model();
+        this.models.add(model);
     }
+
+
+    public static List<Model> getModels() { return models; }
+
+    public static String getName() { return name; }
+
 
     @Override
     public String toString() {
         return "Brand{" +
                 "name='" + name + '\'' +
-                ", models=" + models +
                 '}';
     }
 }

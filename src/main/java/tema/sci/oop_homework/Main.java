@@ -1,9 +1,9 @@
 package tema.sci.oop_homework;
 
 import tema.sci.oop_homework.phone.Brand;
+import tema.sci.oop_homework.phone.Model;
 import tema.sci.oop_homework.phone.Phone;
 import tema.sci.oop_homework.phone_owner.PhoneOwner;
-import tema.sci.oop_homework.util.Generators;
 
 public class Main {
 
@@ -11,19 +11,18 @@ public class Main {
 
 
         Brand samsung = new Brand("Samsung");
-        samsung.addModel("samsungGalaxy", "blue", "Glass", 25);
-        samsung.addModel("samsungGalaxy", "Green", "Glass", 25);
-        samsung.addModel("samsungGalaxy", "purple", "Plastic", 24);
-        samsung.addModel("samsungGalaxy", "red", "Plastic", 23);
-        samsung.addModel("samsungGalaxy", "brown", "Glass", 12);
-        samsung.addModel("samsungGalaxy", "pink", "Wood", 25);
+        Model samsungGalaxy = new Model("Samsung Galaxy", "blue", "Glass", 26);
+        samsung.addModel(samsungGalaxy);
+        Phone andreiPhone = new Phone( "0753_425_326", samsung, samsungGalaxy,"3474233004");
+        PhoneOwner andrei = new PhoneOwner("Rus", "Andrei", andreiPhone);
 
-        Phone andreiPhone = new Phone(samsung,"samsungGalaxy");
-        PhoneOwner andrei = new PhoneOwner(andreiPhone);
-
-        System.out.println(andreiPhone);
+//        System.out.println(andreiPhone);
         System.out.println(andrei);
-        System.out.println(Brand.getModels());
+//        System.out.println(Brand.getModels());
+        System.out.println(andreiPhone);
+
+
+
 
 //        *** Homework API ***
 //
