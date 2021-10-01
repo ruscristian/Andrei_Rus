@@ -1,39 +1,36 @@
 package tema.sci.oop_homework.phone;
-
-
+import tema.sci.oop_homework.phone_owner.PhoneOwner;
 
 import java.util.HashMap;
 
-public class Phone{
+public class OwnersPhone extends Model {
 
-    private Model model;
-    private String imei;
-    private Brand brand;
     private String phoneNumber;
-    private HashMap<String, Phone> contactsList = new HashMap<>();
+    private PhoneOwner name;
+    private String imei;
+    private HashMap<String, OwnersPhone> contactsList = new HashMap<>();
 
 
-    public Phone(String phoneNumber, Brand brand, Model model, String imei) {
+
+    public OwnersPhone(PhoneOwner name, String phoneNumber,String imei) {
         this.phoneNumber = phoneNumber;
-        this.brand = brand;
-        this.model = model;
+        this.name = name;
         this.imei = imei;
     }
 
     public String getPhoneNumber() {
         return phoneNumber;
     }
-    public HashMap<String, Phone> getContactsList() {
+    public HashMap<String, OwnersPhone> getContactsList() {
         return contactsList;
     }
 
     @Override
     public String toString() {
-        return "Phone{" +
+        return "OwnersPhone{" +
                 "phoneNumber='" + phoneNumber + '\'' +
-                " model='" + model + '\'' +
+                ", name=" + name +
                 ", imei='" + imei + '\'' +
-                ", brand=" + brand +
                 ", contactsList=" + contactsList +
                 '}';
     }

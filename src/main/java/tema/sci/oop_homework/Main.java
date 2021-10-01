@@ -2,7 +2,7 @@ package tema.sci.oop_homework;
 
 import tema.sci.oop_homework.phone.Brand;
 import tema.sci.oop_homework.phone.Model;
-import tema.sci.oop_homework.phone.Phone;
+import tema.sci.oop_homework.phone.OwnersPhone;
 import tema.sci.oop_homework.phone_owner.PhoneOwner;
 
 public class Main {
@@ -11,15 +11,25 @@ public class Main {
 
 
         Brand samsung = new Brand("Samsung");
-        Model samsungGalaxy = new Model("Samsung Galaxy", "blue", "Glass", 26);
+        Brand iPhone = new Brand("iPhone");
+        Model samsungGalaxy = new Model(samsung, "blue", "Glass", 26);
+        Model samsungGalaxy4 = new Model(samsung, "blue", "Glass", 23);
+        Model iPhone5 = new Model(iPhone, "blue", "Glass", 26);
+        Model iPhone10 = new Model(iPhone, "blue", "Glass", 23);
+
         samsung.addModel(samsungGalaxy);
-        Phone andreiPhone = new Phone( "0753_425_326", samsung, samsungGalaxy,"3474233004");
-        PhoneOwner andrei = new PhoneOwner("Rus", "Andrei", andreiPhone);
+        samsung.addModel(samsungGalaxy4);
+        samsung.addModel(iPhone5);
+        samsung.addModel(iPhone10);
+
+        PhoneOwner andrei = new PhoneOwner("Rus", "Andrei");
+        OwnersPhone andreiPhone = new OwnersPhone(andrei , "0753_425_326", "3474233004");
+
 
 //        System.out.println(andreiPhone);
-        System.out.println(andrei);
-//        System.out.println(Brand.getModels());
-        System.out.println(andreiPhone);
+//        System.out.println(andrei);
+        System.out.println(Brand.getModels());
+//        System.out.println(samsungGalaxy);
 
 
 

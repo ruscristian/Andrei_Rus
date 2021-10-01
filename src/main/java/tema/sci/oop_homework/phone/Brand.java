@@ -3,6 +3,8 @@ package tema.sci.oop_homework.phone;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 public class Brand{
 
 
@@ -13,8 +15,6 @@ public class Brand{
     public Brand(String name) {
         this.name = name;
     }
-
-
     private static List<Model> models = new ArrayList<Model>();
 
     public void addModel(Model model){
