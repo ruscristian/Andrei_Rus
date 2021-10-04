@@ -3,7 +3,7 @@ package tema.sci.oop_homework;
 import tema.sci.oop_homework.phone.Brand;
 import tema.sci.oop_homework.phone.Model;
 import tema.sci.oop_homework.phone.OwnersPhone;
-import tema.sci.oop_homework.phone_owner.PhoneOwner;
+
 
 public class Main {
 
@@ -14,21 +14,42 @@ public class Main {
         Brand iPhone = new Brand("iPhone");
         Model samsungGalaxy = new Model(samsung, "blue", "Glass", 26);
         Model samsungGalaxy4 = new Model(samsung, "blue", "Glass", 23);
-        Model iPhone5 = new Model(iPhone, "blue", "Glass", 26);
-        Model iPhone10 = new Model(iPhone, "blue", "Glass", 23);
+        Model iPhone5 = new Model(iPhone, "green", "Glass", 26);
+        Model iPhone10 = new Model(iPhone, "green", "Glass", 23);
 
         samsung.addModel(samsungGalaxy);
         samsung.addModel(samsungGalaxy4);
-        samsung.addModel(iPhone5);
-        samsung.addModel(iPhone10);
+        iPhone.addModel(iPhone5);
+        iPhone.addModel(iPhone10);
+        System.out.println(samsung.getModels());
+        System.out.println(iPhone.getModels());
 
-        PhoneOwner andrei = new PhoneOwner("Rus", "Andrei");
-        OwnersPhone andreiPhone = new OwnersPhone(andrei , "0753_425_326", "3474233004");
+
+
+
+        OwnersPhone andreiPhone = new OwnersPhone(iPhone5 , "0753425326", "3474233004");
+
+
+
+        andreiPhone.addContact("07425362537", "Andrei", "Rus");
+        System.out.println(andreiPhone.getContactsList());
+
+
+
+        andreiPhone.call("07425362537");
+        andreiPhone.call("07425362537");
+        andreiPhone.call("07425376257");
+        andreiPhone.viewHistory();
+        andreiPhone.sendMessage("07425362537", new StringBuilder(""));
+        andreiPhone.viewMessageHistory();
+        System.out.println(andreiPhone);
+
+
+
 
 
 //        System.out.println(andreiPhone);
 //        System.out.println(andrei);
-        System.out.println(Brand.getModels());
 //        System.out.println(samsungGalaxy);
 
 

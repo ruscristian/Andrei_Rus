@@ -1,13 +1,30 @@
 package tema.sci.oop_homework.phone;
 
-import tema.sci.oop_homework.phone.OwnersPhone;
-
-import java.util.LinkedList;
-import java.util.List;
 
 public class Call {
 
-    private List<String> history = new LinkedList<>();
+    private Contact contact;
+    private long time;
 
+    public Call(Contact contact, long time) {
+        this.contact = contact;
+        this.time = time;
+    }
+
+    public long getTime() {
+        return time;
+    }
+
+    public Contact getContact() {
+        return contact;
+    }
+
+    @Override
+    public String toString() {
+        return "Call{" +
+                "contact=" + contact +
+                ", time=" + time +
+                '}';
+    }
 
 }
