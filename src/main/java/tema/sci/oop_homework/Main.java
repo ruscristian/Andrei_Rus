@@ -2,7 +2,7 @@ package tema.sci.oop_homework;
 
 import tema.sci.oop_homework.phone.Brand;
 import tema.sci.oop_homework.phone.Model;
-import tema.sci.oop_homework.phone.OwnersPhone;
+import tema.sci.oop_homework.phone.Phone;
 
 
 public class Main {
@@ -21,36 +21,51 @@ public class Main {
         samsung.addModel(samsungGalaxy4);
         iPhone.addModel(iPhone5);
         iPhone.addModel(iPhone10);
-        System.out.println(samsung.getModels());
-        System.out.println(iPhone.getModels());
+
+//        System.out.println(samsung.getModels());
+//        System.out.println(iPhone.getModels());
+
+
+        Phone andreiPhone = new Phone(iPhone5 , "0753425326", "3474233004");
 
 
 
+        andreiPhone.addContact("0742536253", "Andrei", "Rus");
+        andreiPhone.addContact("0745637364", "Florin", "Pasca");
+        andreiPhone.addContact("0753472325", "Razvan", "Chereches");
 
-        OwnersPhone andreiPhone = new OwnersPhone(iPhone5 , "0753425326", "3474233004");
-
-
-
-        andreiPhone.addContact("07425362537", "Andrei", "Rus");
         System.out.println(andreiPhone.getContactsList());
 
 
-
-        andreiPhone.call("07425362537");
-        andreiPhone.call("07425362537");
-        andreiPhone.call("07425376257");
-        andreiPhone.viewHistory();
-        andreiPhone.sendMessage("07425362537", new StringBuilder(""));
-        andreiPhone.viewMessageHistory();
-        System.out.println(andreiPhone);
-
-
+        andreiPhone.call("0742536253");
+        andreiPhone.call("0742536253");
+        andreiPhone.call("0742537625");
+        andreiPhone.call("0745637364");
+        andreiPhone.call("0753472325");
 
 
 
 //        System.out.println(andreiPhone);
-//        System.out.println(andrei);
-//        System.out.println(samsungGalaxy);
+//        System.out.println(andreiPhone.getBattery());
+
+        andreiPhone.viewHistory();
+
+        andreiPhone.sendMessage("0742536253", "Hello !");
+        andreiPhone.sendMessage("0742536253", "Hello, Andrei !");
+        andreiPhone.sendMessage("0734934922", "Hello, stranger");
+        andreiPhone.sendMessage("0734934922", "Hello, strangerrr");
+
+        andreiPhone.viewMessageHistory();
+        andreiPhone.listMessages("0742536253");
+        andreiPhone.listMessages("0734934922");
+
+        andreiPhone.setColor("red");
+        andreiPhone.setMaterial("Stone");
+        System.out.println(andreiPhone);
+        System.out.println(andreiPhone.getBattery());
+
+
+
 
 
 

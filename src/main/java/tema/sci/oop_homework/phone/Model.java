@@ -9,9 +9,7 @@ public class Model {
 
 
 
-    public Model() {
 
-    }
     public Model(Brand modelName, String color, String material, int battery) {
         this.brand = modelName;
         this.color = color;
@@ -21,14 +19,35 @@ public class Model {
 
 
 
-    public int getBattery(Model modelObj) {
-        return modelObj.battery;
-    }
+//
 
     public void setBattery(int battery) {
         this.battery = battery;
     }
 
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public void setMaterial(String material) {
+        this.material = material;
+    }
+
+    public int getBattery() {
+        return battery;
+    }
+
+    public Brand getBrand() {
+        return brand;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public String getMaterial() {
+        return material;
+    }
 
     @Override
     public String toString() {

@@ -8,8 +8,15 @@ public class Message {
 
     public Message(Contact contact, StringBuilder message, long time) {
         this.contact = contact;
-        this.message = message;
         this.time = time;
+
+
+        message.setLength(100);
+
+        if(message.length() > 100){
+            message = new StringBuilder("Message to big. The limit is 100 char!");
+            // Ceva nu functioneaza...
+        } else { this.message = message;}
     }
 
 
