@@ -4,10 +4,10 @@ import java.util.*;
 import java.util.Map.Entry;
 
     public class SortMapByValue {
+
+
         public static boolean ASC = true;
         public static boolean DESC = false;
-
-
 
 
         static Map<Student, Integer> sortByComparator(Map<Student, Integer> unsortedMap, final boolean order)

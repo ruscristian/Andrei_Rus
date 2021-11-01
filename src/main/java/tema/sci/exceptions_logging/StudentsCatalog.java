@@ -113,7 +113,7 @@ public class StudentsCatalog {
     public void listStudentsInOrderByName() {
         try {
             for (Student student : students) {
-                if(student.getFullName().isEmpty() )
+                if(student.getFirstName().isEmpty() || student.getLastName().isEmpty())
                 {throw new EmptyInputException("Student with incomplete data");}
                 studentsInOrderByName.add(student.getFullName());
             }

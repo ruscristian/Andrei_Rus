@@ -21,7 +21,6 @@ public class Main {
         Student minodoraConstaintin = new Student("Constantin", "Minodora",
                 "01.01.2004", 'f', "5030520203403");
 
-
         Student ancaMos = new Student("Mos", "Anca",
                 "31.12.2002", 'f', "5030520203404");
 
@@ -57,7 +56,6 @@ public class Main {
 
         clasa_aXII_A.listStudentsOrderByBirthDate();
         System.out.println(clasa_aXII_A.getStudentsInOrderByDate());
-//        aici ar urma sa gasesc o metoda sa introduc datele printate intro lista
 
         System.out.println(clasa_aXII_A.retrieveAllStudentsWithAge(16));
         System.out.println(clasa_aXII_A.retrieveAllStudentsWithAge(17));
