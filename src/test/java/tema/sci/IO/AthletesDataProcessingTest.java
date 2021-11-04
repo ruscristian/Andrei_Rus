@@ -20,6 +20,25 @@ public class AthletesDataProcessingTest {
         assertEquals(testData.counter, testData.getAthleteList().size());
     }
 
+    @Test(expected = ArrayIndexOutOfBoundsException.class)
+    public void testGetAthleteFromCsvLine() {
+        //given
+        AthletesDataProcessing testData = new AthletesDataProcessing();
+        String inputLine = "1,Dorel,RO";
+        //when
+        testData.getAthleteFromCsvLine(inputLine);
+    }
+    @Test
+    public void testGetAthleteFromCsvLineWithTrim() {
+        //given
+        AthletesDataProcessing testData = new AthletesDataProcessing();
+        String inputLine = "1,Pasca ,RO, 30:34,xxoxo, xxoxx,xxoxo";
+        //when
+        testData.getAthleteList().add(testData.getAthleteFromCsvLine(inputLine));
+        //then
+        assertEquals(1, testData.getAthleteList().size());
+    }
+
     @Test
     public void testSortAthleteList() {
         //given

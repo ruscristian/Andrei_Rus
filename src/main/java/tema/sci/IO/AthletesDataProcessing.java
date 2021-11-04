@@ -27,19 +27,7 @@ public class AthletesDataProcessing {
             while (scanner.hasNextLine()) {
 
                 String input = scanner.nextLine();
-                String[] data = input.split(",");
-
-                String athleteId = data[0];
-                String athleteName = data[1];
-                String countryList = data[2];
-                String time = data[3];
-                String firstShooting = data[4];
-                String secondShooting =data[5];
-                String thirdShooting = data[6];
-
-
-                athleteList.add(new Athlete(athleteId, athleteName, countryList,
-                        time, firstShooting, secondShooting, thirdShooting));
+                athleteList.add(getAthleteFromCsvLine(input));
                 counter++;
             }
         } catch (IOException e) {
@@ -49,7 +37,24 @@ public class AthletesDataProcessing {
                 scanner.close();
             }
         }
+    }
+    public Athlete getAthleteFromCsvLine(String input){
+        String[] data = input.split(",");
 
+        if (data.length != 7){
+            throw new ArrayIndexOutOfBoundsException();
+        }
+
+        String athleteId = data[0].trim();
+        String athleteName = data[1].trim();
+        String countryList = data[2].trim();
+        String time = data[3].trim();
+        String firstShooting = data[4].trim();
+        String secondShooting =data[5].trim();
+        String thirdShooting = data[6].trim();
+
+        return new Athlete(athleteId, athleteName, countryList,
+                time, firstShooting, secondShooting, thirdShooting);
     }
 
 
