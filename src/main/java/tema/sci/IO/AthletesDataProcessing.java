@@ -59,12 +59,7 @@ public class AthletesDataProcessing {
 
 
     public void sortAthleteList(){
-       athleteList.sort(new Comparator<Athlete>() {
-                @Override
-                public int compare(Athlete s1, Athlete s2) {
-                    return s1.getFinalTimeInSeconds() - s2.getFinalTimeInSeconds();
-                }
-            });
+       athleteList.sort((s1, s2) -> s1.getFinalTimeInSeconds() - s2.getFinalTimeInSeconds());
     }
 
     public void firstThreeRanking(){
