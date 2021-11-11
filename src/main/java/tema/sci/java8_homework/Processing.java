@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 public class Processing {
 
-    private Set<Student> studentList = new HashSet<>();
+    private List<Student> studentList = new LinkedList<>();
     protected File fileOut = new File("src/main/resources/Java8Homework_out.csv");
 
     Scanner scanner = null;
@@ -16,7 +16,8 @@ public class Processing {
 
         fileOut.delete();
         try  {
-            scanner = new Scanner(new BufferedReader(new FileReader("src/main/resources/Java8Homework_in.csv")));
+            scanner = new Scanner(new BufferedReader
+                    (new FileReader("src/main/resources/Java8Homework_in.csv")));
             scanner.useDelimiter(",");
             while (scanner.hasNextLine()) {
 
@@ -70,7 +71,7 @@ public class Processing {
         }
     }
 
-    public Set<Student> getStudentList() {
+    public List<Student> getStudentList() {
         return studentList;
     }
 }

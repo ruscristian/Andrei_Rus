@@ -14,10 +14,6 @@ import java.util.Set;
 import static org.mockito.Mockito.*;
 
 public class ProcessingTest {
-    @Mock
-    Set<Student> studentList;
-    @Mock
-    File fileOut;
     @InjectMocks
     Processing processing;
 
@@ -27,29 +23,28 @@ public class ProcessingTest {
     }
 
     @Test
-    public void testUpdateDataFromCsv() throws Exception {
+    public void testUpdateDataFromCsv() {
         processing.updateDataFromCsv();
     }
 
     @Test
-    public void testGetStudentFroamCsvLine() throws Exception {
-        Student result = processing.getStudentFromCsvLine("input");
-        Assert.assertEquals(new Student("firstName", "lastName", "dateOfBirth"), result);
+    public void testGetStudentFroamCsvLine() {
+        Student result = processing.getStudentFromCsvLine("firstName, lastName, 01.01.1990");
+        processing.getStudentList().add(result);
+
     }
 
     @Test(expected = ArrayIndexOutOfBoundsException.class)
     public void testGetStudentFromCsvLine() {
         //given
-        AthletesDataProcessing testData = new AthletesDataProcessing();
-        String inputLine = "1,Dorel,RO";
+        String inputLine = "Dorel";
         //when
-        testData.getAthleteFromCsvLine(inputLine);
+        processing.getStudentFromCsvLine(inputLine);
     }
 
     @Test
-    public void testMoveStudentDataToFile() throws Exception {
+    public void testMoveStudentDataToFile() {
         processing.moveStudentDataToFile(5);
     }
 }
 
-//Generated with love by TestMe :) Please report issues and submit feature requests at: http://weirddev.com/forum#!/testme
