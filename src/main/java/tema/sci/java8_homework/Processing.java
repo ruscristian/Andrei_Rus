@@ -1,22 +1,20 @@
 package tema.sci.java8_homework;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.io.*;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Processing {
 
-    private List<Student> studentList = new ArrayList<>();
+    private Set<Student> studentList = new HashSet<>();
+    protected File fileOut = new File("src/main/resources/Java8Homework_out.csv");
 
     Scanner scanner = null;
     int counter = 0;
 
     public void updateDataFromCsv() {
 
-
+        fileOut.delete();
         try  {
             scanner = new Scanner(new BufferedReader(new FileReader("src/main/resources/Java8Homework_in.csv")));
             scanner.useDelimiter(",");
@@ -47,6 +45,32 @@ public class Processing {
 
 
         return new Student(firstName,lastName,dateOfBirth);
+    }
 
+    public void moveStudentDataToFile(int monthFilter){
+
+        List<String> listForFileOut = studentList.stream()
+                .filter(student -> student.getMonthNumber() == monthFilter)
+                .map(student -> student.getFirstName() + "," + student.getLastName())
+                .sorted()
+                .collect(Collectors.toList());
+
+        System.out.println(listForFileOut);
+
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(fileOut, true));
+
+            for (String line: listForFileOut){
+                writer.write(line + "\n" );
+            }
+
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public Set<Student> getStudentList() {
+        return studentList;
     }
 }
