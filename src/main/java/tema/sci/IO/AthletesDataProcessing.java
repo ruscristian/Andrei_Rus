@@ -25,7 +25,6 @@ public class AthletesDataProcessing {
             scanner = new Scanner(new BufferedReader(new FileReader("src/main/resources/Athletes_In.csv")));
             scanner.useDelimiter(",");
             while (scanner.hasNextLine()) {
-
                 String input = scanner.nextLine();
                 athleteList.add(getAthleteFromCsvLine(input));
                 counter++;
